@@ -1,0 +1,14 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Send Message for Appointment with {{ appointment.teacher.user.username }}</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+    <textarea name="message" placeholder="Write your message..." required></textarea><br><br>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <a href="{% url 'view_appointments' %}">Back to Appointments</a>
+{% endblock %}

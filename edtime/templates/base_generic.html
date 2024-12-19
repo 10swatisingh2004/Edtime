@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDTIME</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Metamorphous&family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Metamorphous&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Metamorphous&family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Metamorphous&family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&family=Anton+SC&family=Metamorphous&family=PT+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Revolution&display=swap');
+   html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+   body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1; /* This makes sure the content area takes up all available space */
+  }
+  header h1 {
+    color:  #005BBB;
+    margin: 20px;
+    font-family: "Anton SC", sans-serif;
+
+  }
+  .head{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 30px;
+    background-color: #005BBB;
+    color: #ffffff;
+    font-size: xx-large;
+  }
+  .head p{
+    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap; /* Prevent wrapping */
+     /* Create a cursor effect */
+    
+  }
+  .head a{
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-size: larger;
+    margin-top: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    
+  }
+
+  .head a:hover{
+    color: black;
+  }
+  hr{
+    transform: rotate(90deg);
+  }
+  footer {
+   
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+  }
+  h2{
+    font-size: x-large;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "PT Mono", monospace;
+
+    color: #005BBB;
+  }
+  .btn button {
+    padding: 10px ;
+    font-family: "Poppins", serif;
+
+    border: none;
+    border-radius: 5px;
+    background-color: #E3F2FD;
+    border: 1px solid #005BBB;
+    cursor: pointer;
+    margin-left: 80%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size:medium;
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 0.8s ease-in-out forwards;
+    animation-delay: 0.1s;
+  }
+  .btn a,td a{
+    color: black;
+    text-decoration: none;
+  }
+  td button{
+    background-color: #E3F2FD;
+    font-family: "Poppins", serif;
+
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  h3{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Prompt", sans-serif;  
+
+  }
+  table{
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: "Poppins", serif;
+
+    margin-left: 40px;
+    border: 2px solid #005BBB;
+  }
+  th{
+    
+    border-right: 2px solid #005BBB;
+    font-size: x-large;
+    width: 100px;
+  }
+  td{
+    padding: 20px;
+    border: none;
+    
+  }
+  td a{
+    color: #333;
+    padding: 10px;
+  }
+  ul{
+    list-style: none;
+    text-align: center;
+    font-size: medium;
+  }
+  form{
+    text-align: center;
+  }
+  input , textarea{
+    width: 60%;
+    border: none;
+    border-bottom: 2px solid #005BBB;
+    padding: 10px;
+    margin: 10px;
+  }
+  form button {
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #F7FF00;
+    font-family: "Poppins", serif;
+    cursor: pointer;
+  }
+  @media (max-width:499px) {
+    .head {
+    
+    font-size: small;
+}
+.head a {
+    font-size: small;
+    margin-top: 10px;
+}
+h2 {
+    font-size: large;
+  
+}
+.btn button {
+    margin-left: 70%;
+    font-size: x-small;
+}
+table {
+    padding: 5px;
+    margin-left: 10px;
+}
+th {
+    border-right: 2px solid #005BBB;
+    font-size:small;
+    width: 100px;
+}
+td {
+    font-size: small;
+    padding: 10px;
+}
+  }
+</style>
+<body>
+  <header>
+    <h1>EDTIME</h1>
+    {% if user.is_authenticated %}
+    <div class="head">
+      <p>Welcome, {{ user.username }}  </p>
+     
+      <a href="{% url 'logout' %}">| <span>     </span>Logout</a>
+    </div>
+    {% else %}
+      <p><a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a></p>
+    {% endif %}
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Edtime</p>
+  </footer>
+</body>
+</html>

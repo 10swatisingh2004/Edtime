@@ -1,0 +1,35 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h2>Student Dashboard</h2>
+  <h3>Available Teachers</h3>
+
+  <form method="GET">
+    <label for="search">Search Teacher:</label>
+    <input type="text" id="search" name="search" placeholder="Search by name or subject">
+    <button type="submit">Search</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Teacher</th>
+        <th>Subject</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for teacher in teachers %}
+        <tr>
+          <td><strong>{{ teacher.user.username }}</strong></td>
+          <td>{{ teacher.subject }}</td>
+          <td><a href="{% url 'book_appointment' teacher.id %}">Book Appointment</a></td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No teachers available.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

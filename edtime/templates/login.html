@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-shadow: inset;
+        box-sizing: border-box;
+    }
+    .form{
+    background-color: #ffffff;
+    text-align: center;
+    margin: auto;
+    padding: 30px;
+    margin-top: 5%;
+    width: 50%;
+    height: max-content;
+    border-radius: 20px;
+    box-shadow: 10px 20px 20px rgba(0, 4, 56, 0.5);
+}
+.form h1{
+    font-size: 40px;
+    color: #003366;
+    font-family: "PT Mono", monospace;
+}
+.form h3{
+    font-size: 25px;
+    color: #212529;
+    font-family: "Poppins", serif;
+}
+.form form{
+    
+    display: flex;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    flex-direction: column;
+    padding: 10px;
+    width: 50%;
+}
+.form input,select{
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    
+    border: 2px solid #003366;
+    border-radius: 10px;
+   
+    font-family: "Poppins", serif;
+    outline: none;
+}
+.form form a {
+    margin-left: 50%;
+    text-decoration: none;
+    color: #000000;
+}
+#login{
+    padding: 20px;
+    width: 50%;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #F7FF00;
+    margin-left: 22%;
+    font-family: "Poppins", serif;
+ 
+    cursor: pointer;}
+    @media (max-width:999px) {
+        .form {
+   
+    width: 90%;
+    
+}.form form {
+    
+    width: 90%;
+}
+    }
+</style>
+<body style="background-color: #005BBB;">
+    <section class="form">
+        <h1>Welcome back!</h1>
+        <h3>Login your Account To Edtime &#128522;</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <div >
+                <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            </div>
+            
+            <div>
+                <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            </div>
+            
+        
+            <button type="submit" id="login">Login</button>
+          </form>
+        
+          <a href="{% url 'register' %}">Don't have an account? Register here</a>
+    </section>
+</body>
+</html>

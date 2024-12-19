@@ -1,0 +1,65 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Admin Dashboard</h2>
+<div class="btn">
+    <button>
+        <a href="{% url 'add_teacher' %}">Add New Teacher</a>
+    </button>
+</div>
+
+  <h3>Teachers</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Department</th>
+        <th>Subject</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for teacher in teachers %}
+        <tr>
+          <td>{{ teacher.user.username }}</td>
+          <td>{{ teacher.department }}</td>
+          <td>{{ teacher.subject }}</td>
+          <td>
+            <button><a href="{% url 'update_teacher' teacher.id %}">Update</a></button> | 
+            <button><a href="{% url 'delete_teacher' teacher.id %}">Delete</a></button>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">No teachers available.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3>Unapproved Students</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+        <tr>
+          <td>{{ student.user.username }}</td>
+          <td>
+            <button><a href="{% url 'approve_student' student.id 'approve' %}">Approve</a></button> | 
+            <button><a href="{% url 'approve_student' student.id 'reject' %}">Reject</a></button>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="2">No unapproved students.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

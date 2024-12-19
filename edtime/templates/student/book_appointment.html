@@ -1,0 +1,18 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Book Appointment with {{ teacher.user.username }}</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+    <label for="date">Date and Time:</label>
+    <input type="datetime-local" id="date" name="date" required><br><br>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" placeholder="Write the purpose of the appointment..." required></textarea><br><br>
+
+    <button type="submit">Book Appointment</button>
+  </form>
+
+  <a href="{% url 'teachers' %}" style="margin-left: 80%; color: black;">Back</a>
+{% endblock %}

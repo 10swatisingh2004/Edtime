@@ -1,0 +1,18 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Update Teacher: {{ teacher.user.username }}</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+    <label for="department">Department:</label>
+    <input type="text" id="department" name="department" value="{{ teacher.department }}" required><br><br>
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" value="{{ teacher.subject }}" required><br><br>
+
+    <button type="submit">Update Teacher</button>
+  </form>
+
+  <a href="{% url 'admin_dashboard' %}" style="margin-left: 80%; color: black; text-decoration: none;">Back</a>
+{% endblock %}
